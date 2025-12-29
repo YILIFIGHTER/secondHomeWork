@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        (1) 在根元素beans中，通过<bean></bean>子元素来配置JavaBean对象。
+            每配置一个bean，相当于配置了一个Java对象。
+        (2) bean子元素需要配置两个属性———class 和 id。其中，
+            class表示所要实例化类的正名(全类名);
+            id表示该对象在Spring容器中的标识，通过id可以获取到对象。
+        (3) property子元素用于配置该对象的成员变量(对象的属性)，其中，
+            name表示属性名称，value表示属性的值。
+        (4) XML内容回顾———若一个标签没有标签体，以<age></age>为例，可以简写为<age/>。
+    -->
+    <!-- 注意———此处我们没有为bean标签配置id属性，默认的分配id为：全类名#0 -->
+    <!-- 第二阶段作业，spring bean装配，基于XML 测试其调用com.myexample.demo.DemoApplicationTests.getBeanByClass -->
+    <bean class="com.myexample.demo.bean.Student">
+        <property name="name" value="Rain"></property>
+        <property name="age" value="19"></property>
+        <property name="score" value="439"></property>
+    </bean>
+</beans>
